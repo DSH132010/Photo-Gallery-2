@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:300,700');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+:root {
+  --Background: rgb(51, 51, 51);
+  --Background-2:#444;
+  --Background-3:rgb(54, 54, 54);
+  --Background-4:rgb(49, 49, 49);
+  --Color:rgb(255, 255, 255);
+  --Success:limegreen;
+  --Red:red;
+  --Link-Background-Color:rgb(95, 95, 95);
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+
+
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background: var(--Success);
+  padding: .5em 1.25em;
+}
+
+.gallery{
+  display: grid;
+  grid: auto / repeat(auto-fit, minmax(15em, 1fr));
+  background: var(--Background);
+  padding: 7em 4em;
+  overflow-x: hidden;
+}
+
+.Gallery-Item{
+  position: relative;
+  flex-basis: 30%;
+  margin: 0px 35px 50px;
+  padding: 0;
+  background: white;
+  border-radius: 10px;
+  padding:0px 0px 5px;
+}
+
+.Gallery-Desc{
+  padding: 1.5em;
+}
+
+.Gallery-Title{
+  font-family: 'Roboto Condensed', sans-srif;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0;
+  padding: 5px 0px;
+}
+
+.Gallery-Image,
+.modal-image{
+  width: 100%;
+  display: block;
+}
+
+.modal{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0, 1.1);
+  transition: transform 750ms ease-in-out;
+  transform-origin: right;
+  padding: 2em;
+  position:fixed;
+  top: 0;
+  left: 0;
+  color: white;
+  background: rgba(0, 0, 0, .5);
+  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.25);
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  border-radius: 1%;
+}
+
+.modal:target {
+  transform: scale(1, 1);
+  transform-origin: left;
+
+}
+
+.modal-content{
+  width: 75%;
+  padding: 1em;
+  background: black;
+  position: relative;
+}
+
+.modal-image{
+  margin-bottom: 1em;
+  object-fit: cover;
+}
+
+.close {
+  position: absolute;
+  right: -1em;
+  top: -1em;
+  border: white 2px solid;
+  display: flex;
+  width: 2em;
+  height: 2em;
+  background: rgba(42, 42, 42, 0.411);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.close::after {
+  content: 'x';
+  color: white;
+}
+
+.main {
+  background: var(--Background);
+  height: 100vh;
+  width: 100%;
+}
+
+.permission{
+ padding: 10px;
+ text-align: center;
+ background:var(--Background-3);
+ color: var(--Color);
+ width: 50%;
+ margin: 0px auto;
+ border-radius: 10px;
+}
+
+.permission h3{
+  padding: 20px 0px 25px;
+  font-weight: 500;
+  font-size:1.5rem;
+}
+
+.permission button:first-child,
+.permission button:last-child{
+  padding: 10px 30px;
+  background: transparent;
+  outline: none;
+  border: 1px solid var(--Color);
+  color: var(--Color);
+  margin: 10px;
+  transition: transform 0.5s ease-out,
+              background-color 0.5s ease-in-out;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  
+}
+
+.permission button:last-child:hover{
+  transform: scale(1.1);
+  background: rgba(255, 0, 0, 0.609);
+}
+.permission button:first-child:hover{
+  transform: scale(1.1);
+  background: rgba(21, 255, 0, 0.411);
+}
+
+
+
+
+
+.permission span{
+  cursor: pointer;
+}
+
+.heading{
+  color: var(--Color);
+  background: var(--Background-3);
+  padding: 20px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 2.3rem;
+}
+
+.spacer{
+  height: 100px;
+  width: 100%;
+  background: var(--Background-4);
+}
+
+
+.footer{
+  background: var(--Background-3);
+  padding: 50px;
+  display: flex;
+  gap: 5rem;
+}
+
+.footer h2, .footer h3{
+  color: var(--Color);
+  font-weight: 500;
+  line-height:2.2rem;
+}
+
+.background-col{
+  align-items: center;
+  width: 100%;
+  background: var(--Background);
+}
+
+.link{
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 16px;
+  background: var(--Link-Background-Color);
+  color: var(--Color);
+  margin-top: 10px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.link:hover,
+.link:focus{
+ transform: scale(1.1);
+ background: var(--Link-Background-Color);
+}
+
+.row2 h3{
+  text-align: center;
+}
